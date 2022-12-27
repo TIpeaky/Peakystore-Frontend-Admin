@@ -1,0 +1,26 @@
+.categories_container {
+    display: flex;
+    padding: 20px 0 20px 20px;
+}
+
+.category {
+    width: 200px;
+}
+
+.category h4 {
+    margin-bottom: 10px;
+}
+
+.category li {
+    margin-bottom: 4px;
+}
+
+.category li a {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.category li a:hover {
+    color: #444;
+    text-decoration: underline;
+}

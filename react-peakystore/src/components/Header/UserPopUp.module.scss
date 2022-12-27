@@ -1,0 +1,65 @@
+.container {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn_login {
+    cursor: pointer;
+    color: #fff;
+    width: 100%;
+    min-width: 100px;
+    background-color: #005a81;
+    padding: 5px;
+    margin-left: -5px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 10px;
+}
+
+.link_signup {
+    font-size: 0.8em;
+    display: block;
+    color: #004563;
+}
+
+.link_signup:hover {
+    text-decoration: underline;
+}
+
+.span_signup {
+    font-size: 0.9em;
+}
+
+.account_title {
+    margin-bottom: 10px;
+}
+
+.account_menu li {
+    margin-bottom: 5px;
+}
+
+.account_menu a:hover {
+    text-decoration: underline;
+}
+
+.account_menu .link_standard {
+    color: #000;
+}
+
+.account_menu .link_logout {
+    font-size: 0.9em;
+    cursor: pointer;
+    color: #fff;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    background-color: #e32626;
+    margin-left: -5px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: #e96f6f;
+    }
+}

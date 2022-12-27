@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #004563;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1.07rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    background-color: white;
+    height: 100%;
+    width: 65%;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 5%;
+    display: flex;
+}
+
+.container_social_medias {
+    background-color: white;
+    height: 100%;
+    width: 65%;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 2%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_social_medias_register {
+    display: flex;
+    width: 11.5rem;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-radius: 7px;
+    border-color: #7C838A;
+    border-width: 1px;
+    padding: 0.5rem;
+    background: linear-gradient(#004563 0 0) left / var(--p,0) no-repeat;
+    transition: .4s,background-position 0s;
+}
+
+.container_social_medias_register:hover {  
+    --p: 100%;
+    background-position: right;
+    border-color: #004563;
+}
+
+.container_social_medias_register_paragrafo {
+    font-size: 0.8rem;
+    color: #7C838A;
+    margin-left: 0.5rem;
+}
+
+.container_social_medias_register:hover .container_social_medias_register_paragrafo {
+    transition: .4s;
+    color: #FFFFFF;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 33rem;
+    margin-top: 1rem;
+}
+
+.label {
+    margin-bottom: 1%;
+    display: block;
+}
+
+input[type="date" i] {
+    font-size: 0.85rem;
+    width: 7rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.4rem;
+}
+
+.input {
+    display: flex;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.5);
+    width: 40rem;
+    margin-bottom: 4%;
+    padding: 0.5rem;
+    border: none;
+    background-color: rgba(176, 186, 195, 0.4);
+    border-radius: 10px;
+}
+
+.input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.input::placeholder {
+    font-size: 0.85rem;
+}
+
+.inputPassword {
+    display: flex;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.5);
+    width: 40rem;
+    margin-bottom: 0;
+    padding: 0.5rem;
+    border: none;
+    background-color: rgba(176, 186, 195, 0.4);
+    border-radius: 10px;
+}
+
+.inputPassword:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.inputPassword::placeholder {
+    font-size: 0.85rem;
+}
+
+.p {
+    font-size: 0.8rem;
+    margin-top: 1%;
+    margin-bottom: 4%;
+    color: #7C838A;
+}
+
+.preferencia {
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+.preferencia_input {
+    display: flex;
+    width: 3%;
+    margin: 0;
+    margin-right: 2%;
+}
+
+.preferencia_label {
+    color: #7C838A;
+}
+
+.notificacao {
+    display: flex;
+    margin-bottom: 3%;
+}
+
+.notificacao_input {
+    display: flex;
+    width: 3%;
+    margin: 0;
+    margin-right: 2%;
+}
+
+.notificacao_label {
+    color: #7C838A;
+    font-size: 0.9rem;
+}
+
+.notificacao_label a {
+    color: #7C838A;
+    font-size: 0.9rem;
+}
+
+.button {
+    margin-left: 50%;
+    margin-top: 2rem;
+    height: 2.7rem;
+    width: 30rem;
+}
+
+
+

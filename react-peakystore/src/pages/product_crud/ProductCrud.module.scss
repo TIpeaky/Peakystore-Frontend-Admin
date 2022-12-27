@@ -1,0 +1,50 @@
+.container {
+    margin-top: 60px;
+    margin-left: 9px;
+    height: 78vh;
+    width: 97vw !important;
+    position: absolute;
+}
+
+.btn_save_product {
+    background-color: rgba(0, 68, 97, 0.75) !important;
+    position: absolute !important;
+    padding: 7px 15px !important;
+    top: 52px !important;
+    left: 280px !important;
+    z-index: 1 !important;
+    border-radius: 15px !important;
+}
+
+.delete_modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #000;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px;
+    padding: 30px 40px;
+}
+
+.delete_modal .warning_icon {
+    color: #d9534f;
+    display: block;
+    margin: 0 auto;
+    font-size: 6em;
+}
+
+.delete_modal h3 {
+    margin-bottom: 20px;
+}
+
+.delete_modal .delete_btn {
+    margin-right: 10px;
+    background-color: #d9534f;
+}
+
+.delete_modal .cancel_btn {
+    color: rgba(0, 68, 97, 0.75) !important;
+    border-color: rgba(0, 68, 97, 0.75) !important;
+;
+}
