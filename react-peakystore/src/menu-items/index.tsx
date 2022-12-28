@@ -59,7 +59,7 @@ const menuItems = {
         {
             id: 'Funcionarios',
             title: 'Funcionarios',
-            url: '/funcionarios',
+            url: '/admin/employee',
             icon: icons.TeamOutlined,
             breadcrumbs: false
         }
