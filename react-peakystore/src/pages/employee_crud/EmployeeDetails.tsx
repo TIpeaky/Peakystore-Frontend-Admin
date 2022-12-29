@@ -193,15 +193,20 @@ const EmployeeDetails = ({ employee, operation, closeModal, updateEmployeeList }
               error={emailError !== ""} helperText={emailError} />
           </Grid>
 
-          <Grid item xs={6}>
-            <TextField value={operation !== "create" ? employeeForm.password : undefined}
-              {...(operation === "read" ? { inputProps: { readOnly: true } } : {})}
-              label="Senha" fullWidth name="password" onChange={handleChange} onBlur={passwordIsValid}
-              error={passwordError !== ""} helperText={passwordError} type="password" />
-          </Grid>
+          {operation !== "read" && (
+            <>
+              <Grid item xs={6}>
+                <TextField value={operation !== "create" ? employeeForm.password : undefined}
+                  label="Senha" fullWidth name="password" onChange={handleChange} onBlur={passwordIsValid}
+                  error={passwordError !== ""} helperText={passwordError} type="password" />
+              </Grid>
+            </>
+          )}
+
+          
 
           <Grid item xs={6}>
-            <FormControl fullWidth error={passwordError !== ""}>
+            <FormControl fullWidth error={genderError !== ""}>
               <InputLabel id="product-color-label">Gênero</InputLabel>
               <Select
                 labelId="product-color-label" name="gender" label="Gênero" onChange={handleChange} onBlur={genderIsValid}
@@ -219,7 +224,7 @@ const EmployeeDetails = ({ employee, operation, closeModal, updateEmployeeList }
           <Grid item xs={6}>
             <TextField value={operation !== "create" ? employeeForm.birthDate : undefined}
               {...(operation === "read" ? { inputProps: { readOnly: true } } : {})}
-              label="Data de nascimento" fullWidth name="birthDate" onChange={handleChange} onBlur={birthDateIsValid}
+              label="Data de nascimento" fullWidth name="birthDate" onChange={handleChange} onBlur={birthDateIsValid} type="date"
               error={birthDateError !== ""} helperText={birthDateError} />
           </Grid> 
 

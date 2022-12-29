@@ -106,13 +106,13 @@ const EmployeeCrud = () => {
     { field: 'name', headerName: 'NOME', width: 200 },
     { field: 'cpf', headerName: 'CPF', width: 130 },
     { field: 'email', headerName: 'EMAIL', width: 130 },
-    { field: 'birthDate', headerName: 'NASCIMENTO', width: 130 },
-    { field: 'gender', headerName: 'GÊNERO', width: 130 },
+    { field: 'birthDate', headerName: 'NASCIMENTO', width: 130, type: 'date' },
+    { field: 'genderDescription', headerName: 'GÊNERO', width: 130 },
     {
       field: 'actions',
       type: 'actions',
       headerName: 'AÇÕES',
-      width: 80,
+      width: 100,
       renderCell: (param: any) => [
         <GridActionsCellItem
           icon={<RemoveRedEyeOutlinedIcon />}
