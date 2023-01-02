@@ -5,13 +5,14 @@ import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import Button from '@mui/material/Button';
-import { useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import http from "../../http";
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Grid from '@mui/material/Grid';
 import FormHelperText from '@mui/material/FormHelperText';
+import { useState, useEffect } from "react";
+import IFile from "../../interfaces/File";
 
 interface productDetailsInterface {
   product: IProduct,
@@ -222,6 +223,25 @@ const ProductDetails = ({ product, operation, closeModal, updateProductList }: p
     return true;
   }
 
+  const [images, setimages] = useState<File[]>([]);
+  const [progress, setProgress] = useState<number>(0);
+  const [message, setMessage] = useState<string>("");
+  const [fileInfos, setFileInfos] = useState<Array<IFile>>([]);
+
+  const selectFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    const { files } = event.target;
+    const selectedFiles = files as FileList;
+    setimages((prevState) => {
+      return [...prevState, (selectedFiles?.[0])]
+    })
+
+    setProductForm(prevState => ({
+      ...prevState,
+      images: images
+    }));
+  };
+
   return (
     <Box component="form" noValidate autoComplete="off" className={styles.container}>
       {operation === "read" && (<h2>Modo de leitura</h2>)}
@@ -391,8 +411,48 @@ const ProductDetails = ({ product, operation, closeModal, updateProductList }: p
         {/* Coluna da direita */}
         <Grid container spacing={2} item xs={6}>
           <Grid item xs={12}>
-            <TextField label="Espaço destinado a inserção de fotos do produto"
-              multiline rows={4} fullWidth disabled />
+            <div>
+              <div className="row">
+                <div className="col-8">
+                  <label className="btn btn-default p-0">
+                    <input type="file" onChange={selectFile} />
+                  </label>
+                </div>
+              </div>
+
+              {images && (
+                <div className="progress my-3">
+                  <div
+                    className="progress-bar progress-bar-info"
+                    role="progressbar"
+                    aria-valuenow={progress}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    style={{ width: progress + "%" }}
+                  >
+                    {progress}%
+                  </div>
+                </div>
+              )}
+
+              {message && (
+                <div className="alert alert-secondary mt-3" role="alert">
+                  {message}
+                </div>
+              )}
+
+              <div className="card mt-3">
+                <div className="card-header">List of Files</div>
+                <ul className="list-group list-group-flush">
+                  {fileInfos &&
+                    fileInfos.map((file, index) => (
+                      <li className="list-group-item" key={index}>
+                        <a href={file.url}>{file.name}</a>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            </div>
           </Grid>
 
           <Grid item xs={12}>

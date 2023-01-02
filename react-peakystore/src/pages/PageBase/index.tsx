@@ -1,11 +1,11 @@
-import { Outlet } from "react-router-dom"
-import NavBar from '../../../components/NavBar'
-import Sidebar from '../../../components/SideBar'
+import { Outlet, useNavigate } from "react-router-dom"
+import NavBar from '../../components/NavBar'
+import Sidebar from '../../components/SideBar'
 import { useDispatch, useSelector } from 'react-redux';
-import { AppBar, Box, CssBaseline, Toolbar } from '@mui/material';
+import { AppBar, Box, CssBaseline } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
 import { useEffect, useState } from 'react';
-import { openDrawer } from '../../../store/reducers/menu';
+import { openDrawer } from '../../store/reducers/menu';
 
 export interface Customization {
     isOpen: undefined[];
@@ -72,6 +72,8 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({
 
 const PaginaBase = () => {
     const theme = useTheme();
+    let navigate = useNavigate()
+    const token = sessionStorage.getItem('token')
 
     const { drawerOpen } = useSelector((state: RootState) => state.menu);
     const dispatch = useDispatch();
@@ -81,6 +83,12 @@ const PaginaBase = () => {
         setOpen(!open);
         dispatch(openDrawer({ drawerOpen: !open }));
     };
+
+    useEffect(() => {
+        if(!token) {
+            navigate('/admin/login')
+        }
+      }, []);
 
     useEffect(() => {
         if (open !== drawerOpen) setOpen(drawerOpen);

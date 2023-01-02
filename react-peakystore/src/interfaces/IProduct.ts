@@ -1,4 +1,5 @@
 export interface IProduct {
+    [x: string]: any
     id : string
     sku : string
     name : string
@@ -12,4 +13,5 @@ export interface IProduct {
     size : string
     category : string
     section : string
+    images : File[]
 }
